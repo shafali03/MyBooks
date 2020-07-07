@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./controllers/index')
 const authorRouter = require('./controllers/authors')
+const bookRouter = require('./controllers/books')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -34,6 +35,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 
 
